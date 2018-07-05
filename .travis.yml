@@ -1,0 +1,97 @@
+install: true
+language: cpp
+addons:
+  apt_packages:
+    - gfortran
+sudo: required
+python: 
+- '3.6'
+before_install:
+# Try git update with out this.
+#- git config --global core.autolf input
+#- git clone --depth=50 --branch=master git@github.com:altairengineering/openmatrixlanguage_dev.git
+git clone --depth=50 --branch=master git@github.com:https://github.com/OpenMatrixLanguage/OpenMatrix.git OpenMatrixPublic
+env:
+  SH=bash
+  OML_ROOT=$PWD/OpenMatrixPublic
+  OML_THIRDPARTY=$PWD/third_party_linux
+  LD_LIBRARY_PATH=$OML_THIRDPARTY/fftw/fftw-3.2.2/.libs:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OML_THIRDPARTY/lapack/lapack-3.7.1
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OML_THIRDPARTY/ANTLR/libantlr3c-3.4/.libs
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OML_THIRDPARTY/matio/matio-1.5.11/src/.libs
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OML_THIRDPARTY/hdf5/hdf5-1.10.1/hdf5/lib
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OML_THIRDPARTY/sundials/sundials-3.1.0-install/lib
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OML_ROOT/src/bin/linux64
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/bin:/usr/lib
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/x86_64-linux-gnu
+  PATH=$PATH:$OML_ROOT/src/bin/linux64
+  OML_PYTHONHOME=/usr
+  OML_PYTHONVERSION=python3
+  OML_PYTHON_NUMPYDIR=$OML_PYTHONHOME/lib/$OML_PYTHONVERSION/dist-packages/numpy/core/include/numpy/
+before_script: 
+- echo $0
+- ps -p$$ -ocmd=""
+- ps -p$$
+- ls -alF && pwd 
+- sudo apt-get install python3-numpy 
+- chmod 777 travis_before.sh
+- ./travis_before.sh
+- chmod 777 travis_before1.sh
+- ./travis_before1.sh
+- chmod 777 wsearch.sh
+- ./wsearch.sh
+- cat -A OpenMatrix/Tests/RegressionTests/RefLogs/abs1.log
+#- cd OpenMatrix/src
+- cd OpenMatrixPublic/src
+#- sudo add-apt-repository ppa:deadsnakes/ppa
+#- sudo apt-get update
+#- sudo apt-get install python3.6
+script:
+  make -f makefile.open
+after_success:
+- chmod 777 $OML_ROOT/src/bin/linux64/omlconsole
+- ls -alF $OML_ROOT/src/bin/linux64
+- make -f makefile.open test
+- which omlconsole
+- omlconsole -version
+- pwd
+- cd $OML_ROOT/Tests/RegressionTests && pwd
+- omlconsole abs1.oml
+- omlconsole abs1.oml > abs1.log
+- diff -s abs1.log RefLogs/abs1.log
+- diff -s -Z abs1.log RefLogs/abs1.log
+- cat -A abs1.log
+- cat -A RefLogs/abs1.log
+- hexdump -C abs1.log
+- hexdump -C RefLogs/abs1.log
+- ps -p$$
+- omlconsole -notoolbox -x abs2.oml >& abs2.log
+- diff -s abs2.log RefLogs/abs2.log
+- diff -s -Z abs2.log RefLogs/abs2.log
+- cat -A abs2.log
+- cat -A RefLogs/abs2.log
+- hexdump -C abs2.log
+- hexdump -C RefLogs/abs2.log
+- ls -l /bin/sh
+- perl ../regressOMLConsole.pl -travis
+- ls -alF *.log
+- cat -A abs1.log
+- diff -s abs1.log RefLogs/abs1.log
+- diff -s -Z abs1.log RefLogs/abs1.log
+- cd $OML_ROOT/Tests
+- source run_toolbox_tests.sh
+#- perl ../regressOMLConsole.pl -travis2 -limit=10
+#- ls -alF *.log
+#- cat -A abs1.log
+#- diff -s abs1.log RefLogs/abs1.log
+#- diff -s -Z abs1.log RefLogs/abs1.log
+#- cat pete1.pl
+#- rm -v bin2dec1.log
+#- rm -v testfile.sh
+#- perl pete1.pl
+#- ls -alF testfile.sh
+#- cat -A testfile.sh
+#- cat -A bin2dec1.log
+#- diff -s bin2dec1.log RefLogs/bin2dec1.log
+compiler: gcc
