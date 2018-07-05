@@ -35,12 +35,12 @@ before_script:
 - ps -p$$
 - ls -alF && pwd 
 - sudo apt-get install python3-numpy 
-- chmod 777 travis_before.sh
-- ./travis_before.sh
-- chmod 777 travis_before1.sh
-- ./travis_before1.sh
-- chmod 777 wsearch.sh
-- ./wsearch.sh
+#- chmod 777 travis_before.sh
+#- ./travis_before.sh
+#- chmod 777 travis_before1.sh
+#- ./travis_before1.sh
+#- chmod 777 wsearch.sh
+#- ./wsearch.sh
 - cat -A OpenMatrix/Tests/RegressionTests/RefLogs/abs1.log
 #- cd OpenMatrix/src
 - cd OpenMatrixPublic/src
