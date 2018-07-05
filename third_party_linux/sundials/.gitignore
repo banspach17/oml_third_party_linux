@@ -1,0 +1,4 @@
+# We want all files for Travis build
+!*.a
+!*.so
+!*.so.*

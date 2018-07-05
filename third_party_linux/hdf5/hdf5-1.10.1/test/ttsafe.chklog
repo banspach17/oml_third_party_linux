@@ -1,0 +1,20 @@
+============================
+ ttsafe  Test Log
+============================
+Most thread-safety tests skipped because THREADSAFE not enabled
+
+For help use: /users/banspach/oss/third_party/hdf5/hdf5-1.10.1/test/.libs/lt-ttsafe -help
+Linked with hdf5 version 1.10 release 1
+Testing  -- library threadsafe status (is_threadsafe) 
+
+
+All tests were successful. 
+
+
+Cleaning Up temp files...
+
+0.01user 0.01system 0:00.06elapsed 40%CPU (0avgtext+0avgdata 7944maxresident)k
+72inputs+64outputs (1major+8336minor)pagefaults 0swaps
+
+Finished testing ttsafe 
+============================

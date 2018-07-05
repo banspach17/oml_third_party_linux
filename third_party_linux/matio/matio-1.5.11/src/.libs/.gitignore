@@ -1,0 +1,3 @@
+# ignore objects - we need the archives for Linux build in Travis
+!*.so
+!*.so.*

@@ -1,0 +1,12 @@
+Making install in src
+make[1]: Entering directory `/users/banspach/oss/third_party/matio/matio-1.5.11/src'
+make[2]: Entering directory `/users/banspach/oss/third_party/matio/matio-1.5.11/src'
+ /bin/mkdir -p '/usr/local/lib'
+ /bin/sh ../libtool   --mode=install /bin/install -c   libmatio.la '/usr/local/lib'
+libtool: install: /bin/install -c .libs/libmatio.so.4.4.0 /usr/local/lib/libmatio.so.4.4.0
+/bin/install: cannot create regular file '/usr/local/lib/libmatio.so.4.4.0': Permission denied
+make[2]: *** [install-libLTLIBRARIES] Error 1
+make[2]: Leaving directory `/users/banspach/oss/third_party/matio/matio-1.5.11/src'
+make[1]: *** [install-am] Error 2
+make[1]: Leaving directory `/users/banspach/oss/third_party/matio/matio-1.5.11/src'
+make: *** [install-recursive] Error 1

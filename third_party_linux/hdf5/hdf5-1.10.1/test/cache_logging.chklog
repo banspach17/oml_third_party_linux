@@ -1,0 +1,11 @@
+============================
+ cache_logging  Test Log
+============================
+Testing basic metadata cache logging functionality.
+Testing metadata cache log api calls                                   PASSED
+All Metadata Cache Logging tests passed.
+0.02user 0.01system 0:00.09elapsed 37%CPU (0avgtext+0avgdata 7880maxresident)k
+80inputs+872outputs (1major+8718minor)pagefaults 0swaps
+
+Finished testing cache_logging 
+============================

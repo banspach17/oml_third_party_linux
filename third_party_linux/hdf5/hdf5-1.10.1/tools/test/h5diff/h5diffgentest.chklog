@@ -1,0 +1,8 @@
+============================
+ h5diffgentest  Test Log
+============================
+0.17user 0.04system 0:00.94elapsed 22%CPU (0avgtext+0avgdata 135596maxresident)k
+288inputs+5520outputs (1major+14959minor)pagefaults 0swaps
+
+Finished testing h5diffgentest 
+============================

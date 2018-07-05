@@ -1,0 +1,38 @@
+============================
+testh5clear.sh  Test Log
+============================
+Testing ../../src/misc/h5clear -h                                     PASSED
+Testing ../../src/misc/h5clear                                        PASSED
+Testing ../../src/misc/h5clear junk.h5                                PASSED
+Testing ../../src/misc/h5clear orig_h5clear_sec2_v3.h5                PASSED
+Testing ../../src/misc/h5clear -m                                     PASSED
+Testing ../../src/misc/h5clear -s junk.h5                             PASSED
+Testing ../../src/misc/h5clear -m -s                                  PASSED
+Testing ../../src/misc/h5clear -m -s junk.h5                          PASSED
+Testing ../../src/misc/h5clear -m orig_h5clear_sec2_v2.h5             PASSED
+Testing ../../src/misc/h5clear -s -m orig_h5clear_sec2_v0.h5          PASSED
+Testing ../../src/misc/h5clear -m h5clear_mdc_image.h5                PASSED
+Testing ../../src/misc/h5clear --vers                                 PASSED
+Testing ../../src/misc/h5clear -k                                     PASSED
+Testing ../../src/misc/h5clear -k junk.h5                             PASSED
+Testing ../../src/misc/h5clear -l h5clear_sec2_v2.h5                  PASSED
+Testing ../../src/misc/h5clear -m -k                                  PASSED
+Testing ../../src/misc/h5clear -l -m                                  PASSED
+Testing ../../src/misc/h5clear -m -l junk.h5                          PASSED
+Testing ../../src/misc/h5clear -l -m junk.h5                          PASSED
+Testing ../../src/misc/h5clear -m -l h5clear_sec2_v0.h5               PASSED
+Testing ../../src/misc/h5clear -l -m h5clear_sec2_v0.h5               PASSED
+Testing ../../src/misc/h5clear -m mod_h5clear_mdc_image.h5            PASSED
+Testing ../../src/misc/h5clear -s -m mod_h5clear_mdc_image.h5         PASSED
+Testing ../../src/misc/h5clear -s h5clear_sec2_v3.h5                  PASSED
+Testing ../../src/misc/h5clear -s h5clear_log_v3.h5                   PASSED
+Testing ../../src/misc/h5clear -s latest_h5clear_sec2_v3.h5           PASSED
+Testing ../../src/misc/h5clear -s latest_h5clear_log_v3.h5            PASSED
+Testing ../../src/misc/h5clear -s h5clear_sec2_v0.h5                  PASSED
+Testing ../../src/misc/h5clear -s h5clear_sec2_v2.h5                  PASSED
+All h5clear tests passed.
+0.18user 0.44system 0:01.76elapsed 35%CPU (0avgtext+0avgdata 8340maxresident)k
+904inputs+1560outputs (2major+315213minor)pagefaults 0swaps
+
+Finished testing testh5clear.sh 
+============================
