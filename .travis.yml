@@ -6,6 +6,8 @@ addons:
 sudo: required
 python: 
 - '3.6'
+before_install:
+git clone --depth=50 --branch=master git@github.com:https://github.com/OpenMatrixLanguage/OpenMatrix.git OpenMatrixPublic
 env:
   SH=bash
   OML_ROOT=$PWD/OpenMatrixPublic
