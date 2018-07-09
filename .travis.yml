@@ -45,8 +45,9 @@ after_success:
 - perl ../regressOMLConsole.pl -travis
 - cd $OML_ROOT/Tests
 - source run_toolbox_tests.sh
+- cd $OML_ROOT/Tests
 - ls -alF ..
 - ls -alF ../..
 - ls -alF ../../..
-- source ../../../evaluate_test_results.sh
+- source ../../evaluate_test_results.sh
 compiler: gcc
