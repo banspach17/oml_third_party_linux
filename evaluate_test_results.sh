@@ -43,4 +43,4 @@ eval_toolbox_test omlSignals
 eval_toolbox_test omlStatistics
 
 echo test_result $test_result
-return $test_result
+exit $test_result
