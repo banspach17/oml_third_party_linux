@@ -4,6 +4,7 @@ result=$(find $1 -maxdepth 1 -name '*.log' | wc -l)
 
 if [ $result -gt 0 ]; then
   test_result=1;
+  ls -alF $1/*.log
 fi
 
 echo Test result fails for $1 are $result
@@ -17,6 +18,7 @@ result=$(find toolboxes/$1/tests -maxdepth 1 -name '*.log' | wc -l)
 
 if [ $result -gt 0 ]; then
   test_result=1;
+  ls -alF toolboxes/$1/tests/*.log
 fi
 
 echo Test result fails for $1 are $result
@@ -43,4 +45,7 @@ eval_toolbox_test omlSignals
 eval_toolbox_test omlStatistics
 
 echo test_result $test_result
+if [ $test_result -ne 0 ]; then
+  echo Note:  Failed tests fails the build
+fi
 exit $test_result
