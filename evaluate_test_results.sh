@@ -30,7 +30,7 @@ return $result
 test_result=0
 
 #Check core regression tests for the existance of any *.log files
-eval_regression_test RegressionTests
+#pause eval_regression_test RegressionTests
 
 #Check each toolbox test directory for the existance of any *.log files
 eval_toolbox_test omlCAE
@@ -40,7 +40,7 @@ eval_toolbox_test omlMathUtils
 eval_toolbox_test omlMatio
 eval_toolbox_test omlOptimization
 eval_toolbox_test omlPolynom
-eval_toolbox_test omlpythonbridge
+#pause eval_toolbox_test omlpythonbridge
 eval_toolbox_test omlSignals
 eval_toolbox_test omlStatistics
 
