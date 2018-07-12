@@ -34,6 +34,10 @@ before_script:
 script:
 #- ls -alF /usr/include/python3m
 - ls -alF
+- echo LIST /usr/bin/py*
+- ls -alF /usr/bin/py*
+- echo LIST /usr/lib/py*
+- ls -alF /usr/lib/py*
 - cd OpenMatrixPublic/src
 - ls -alF
 - make -f makefile.open
