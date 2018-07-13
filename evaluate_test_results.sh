@@ -30,7 +30,7 @@ return $result
 test_result=0
 
 #Check core regression tests for the existance of any *.log files
-#pause eval_regression_test RegressionTests
+eval_regression_test RegressionTests
 
 #Check each toolbox test directory for the existance of any *.log files
 eval_toolbox_test omlCAE
