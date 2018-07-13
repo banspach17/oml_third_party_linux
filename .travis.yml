@@ -37,9 +37,9 @@ before_script:
 #Another error 6 "curl -u banspach:Hgrth67@ -O \"https://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
 #- "curl -ubanspach:Hgrth67@ -O \"http://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
 #- "curl -ubanspach:Hgrth67@ -O \"http://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
-source get_third_party_linux.sh
 script:
 #- ls -alF /usr/include/python3m
+- source get_third_party_linux.sh
 - ls -alF
 - echo LIST /usr/bin/py*
 - ls -alF /usr/bin/py*
