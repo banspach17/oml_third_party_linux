@@ -34,7 +34,8 @@ before_script:
 #Fail error 6 curl -ubanspach:Hgrth67@ -O "http://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip"
 #- "curl --help"
 #Fail error 6- "curl -u 'banspach:Hgrth67@' -O \"https://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
-- "curl -u banspach:Hgrth67@ -O \"https://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
+#Another error 6 "curl -u banspach:Hgrth67@ -O \"https://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
+- "curl -ubanspach:Hgrth67@ -O \"https://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
 script:
 #- ls -alF /usr/include/python3m
 - ls -alF
