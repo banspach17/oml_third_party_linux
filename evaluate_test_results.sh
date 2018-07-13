@@ -1,3 +1,4 @@
+#!/bin/bash
 eval_regression_test() {
 
 result=$(find $1 -maxdepth 1 -name '*.log' | wc -l)
