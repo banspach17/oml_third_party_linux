@@ -29,10 +29,13 @@ return $result
 # setup default test_result.  If no tests have failed, this will be the return result
 test_result=0
 
-#Check core regression tests for the existance of any *.log files
+echo Check regression tests for the existance of any log files.
+echo Existance of any log files indicates a failed regression test.
+echo
+echo Check core regression tests...
 eval_regression_test RegressionTests
 
-#Check each toolbox test directory for the existance of any *.log files
+echo Check each toolbox test directory...
 eval_toolbox_test omlCAE
 eval_toolbox_test omlCalculus
 eval_toolbox_test omlDiffEq
