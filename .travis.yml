@@ -32,7 +32,7 @@ before_script:
 #- sudo apt-get update
 #- sudo apt-get install python3.6
 #Fail error 6 curl -ubanspach:Hgrth67@ -O "http://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip"
-- "curl -u 'banspach:Hgrth67@' -O \""http://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
+- "curl -u 'banspach:Hgrth67@' -O \"http://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
 script:
 #- ls -alF /usr/include/python3m
 - ls -alF
