@@ -7,6 +7,6 @@
 #The command below works, but tries a couple of FTP pulls which are not compatible with the available server.
 #curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 -O "ftp://ftp2.altair.com/%2foutgoing/smallfile.tar.gz"
 set -x
-curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 --disable-eprt -O "ftp://ftp2.altair.com/%2foutgoing/smallfile.tar.gz"
+curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 --disable-eprt --ftp-port 21 -O "ftp://ftp2.altair.com/%2foutgoing/smallfile.tar.gz"
 set +x
 curl --help
