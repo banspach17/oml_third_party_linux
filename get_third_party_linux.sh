@@ -10,4 +10,15 @@
 set -x
 curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 --disable-eprt -O "ftp://ftp2.altair.com/%2foutgoing/smallfile.tar.gz"
 set +x
+#xfile=third_party_linux.tar.gz
+
+xfile=smallfile.tar.gz
+
+if tar xfz $xfile; then
+    echo All is good, archive $xfile extracted >&2
+else
+    echo Archive $xfile failed to extract >&2
+fi
+
+ls -alF smallfile*
 #curl --help
