@@ -7,6 +7,22 @@
 #The command below works, but tries a couple of FTP pulls which are not compatible with the available server.
 #curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 -O "ftp://ftp2.altair.com/%2foutgoing/smallfile.tar.gz"
 #curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 --disable-eprt --ftp-port 21 -O "ftp://ftp2.altair.com/%2foutgoing/smallfile.tar.gz"
+#curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 --disable-eprt -O "ftp://ftp2.altair.com/%2foutgoing/third_party_linux.tar.gz"
+
+# ---------- ---------- ---------- ----------
+get_file() {
+set -x
+curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 --disable-eprt -O "ftp://ftp2.altair.com/%2foutgoing/$1"
+set +x
+if tar xfz $1; then
+    echo All is good, archive $1 extracted >&2
+else
+    echo Archive $1 failed to extract >&2
+fi
+}
+
+# ---------- ---------- ---------- ----------
+save_steps() {
 set -x
 curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 --disable-eprt --ftp-port -O "ftp://ftp2.altair.com/%2foutgoing/smallfile.tar.gz"
 curl -v -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 --disable-eprt -O "ftp://ftp2.altair.com/%2foutgoing/smallfile.tar.gz"
@@ -23,3 +39,8 @@ fi
 
 ls -alF smallfile*
 #curl --help
+}
+# ---------- ---------- ---------- ----------
+
+get_file smallfile.tar.gz
+
