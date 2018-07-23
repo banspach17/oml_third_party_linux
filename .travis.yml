@@ -41,10 +41,10 @@ before_script:
 #- "curl -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 \"ftp://ftp2.altair.com/%2foutgoing/third_party_linux.tar.gz\"" -o ~/third_party_linux.tar.gz
 script:
 #- ls -alF /usr/include/python3m
-#- find / -xdev -name Python.h
+- find / -xdev -name Python.h
 #- ls -alF /opt/python/3.6.3/bin
 #- ls -alF /opt/python/3.6.3/lib
-- ls -alF /opt/python/3.6.3/lib/python3.6/site-packages/*
+#- ls -alF /opt/python/3.6.3/lib/python3.6/site-packages/*
 #- ls -alF /opt/python/3.6.3/share
 #- source get_third_party_linux.sh
 #- ls -alF
