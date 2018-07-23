@@ -43,8 +43,8 @@ before_script:
 #- python -V
 - which python3
 - which python3.6
-- ls -alF /opt/pyenv/shims/python3.6
-- ls -alF /opt/pyenv/shims/python3.6/*
+- ls -alF /opt/pyenv/shims
+#- ls -alF /opt/pyenv/shims/python3.6
 #- python3.6 -V
 script:
 #- ls -alF /usr/include/python3m
