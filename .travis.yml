@@ -24,8 +24,8 @@ env:
   LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
   LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/x86_64-linux-gnu
   PATH=$PATH:$OML_ROOT/src/bin/linux64
-  OML_PYTHONHOME=/usr
-  OML_PYTHONVERSION=python3
+  OML_PYTHONHOME=/opt/python/3.6.3
+  OML_PYTHONVERSION=python3.6
   OML_PYTHON_NUMPYDIR=$OML_PYTHONHOME/lib/$OML_PYTHONVERSION/dist-packages/numpy/core/include/numpy/
 before_script:
 #- sudo add-apt-repository ppa:deadsnakes/ppa
@@ -41,18 +41,20 @@ before_script:
 script:
 #- ls -alF /usr/include/python3m
 #- find / -xdev -name Python.h
-- ls -alF /opt/python/3.6.3/bin
-- ls -alF /opt/python/3.6.3/lib
-- ls -alF /opt/python/3.6.3/share
+#- ls -alF /opt/python/3.6.3/bin
+#- ls -alF /opt/python/3.6.3/lib
+- ls -alF /opt/python/3.6.3/lib/python3.6
+#- ls -alF /opt/python/3.6.3/share
 #- source get_third_party_linux.sh
-- ls -alF
-- echo LIST /usr/bin/py*
-- ls -alF /usr/bin/py*
-- echo LIST /usr/lib/py*
-- ls -alF /usr/lib/py*
+#- ls -alF
+#- echo LIST /usr/bin/py*
+#- ls -alF /usr/bin/py*
+#- echo LIST /usr/lib/py*
+#- ls -alF /usr/lib/py*
 - cd OpenMatrixPublic/src
-- ls -alF
+#- ls -alF
 - make -f makefile.open
+- make -f oml/toolboxes/omlpythonbridge/makefile.open   
 after_success:
 - chmod 777 $OML_ROOT/src/bin/linux64/omlconsole
 - ls -alF $OML_ROOT/src/bin/linux64
