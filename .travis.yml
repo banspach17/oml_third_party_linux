@@ -39,9 +39,12 @@ before_script:
 #- "curl -ubanspach:Hgrth67@ -O \"http://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
 #- "curl -ubanspach:Hgrth67@ -O \"http://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
 #- "curl -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 \"ftp://ftp2.altair.com/%2foutgoing/third_party_linux.tar.gz\"" -o ~/third_party_linux.tar.gz
+set | grep PATH
+python -V
+python3.6 -V
 script:
 #- ls -alF /usr/include/python3m
-- find / -xdev -name Python.h
+#- find / -xdev -name Python.h
 #- ls -alF /opt/python/3.6.3/bin
 #- ls -alF /opt/python/3.6.3/lib
 #- ls -alF /opt/python/3.6.3/lib/python3.6/site-packages/*
