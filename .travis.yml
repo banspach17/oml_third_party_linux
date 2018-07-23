@@ -44,6 +44,7 @@ before_script:
 - which python3
 - which python3.6
 - ls -alF /opt/pyenv/shims
+- ls -alF /opt/pyenv/*
 #- ls -alF /opt/pyenv/shims/python3.6
 #- python3.6 -V
 script:
