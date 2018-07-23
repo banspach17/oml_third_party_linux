@@ -41,8 +41,10 @@ before_script:
 #- "curl -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 \"ftp://ftp2.altair.com/%2foutgoing/third_party_linux.tar.gz\"" -o ~/third_party_linux.tar.gz
 #- set | grep PATH
 #- python -V
-- which python3.6
 - which python3
+- which python3.6
+- ls -alF /opt/pyenv/shims/python3.6
+- ls -alF /opt/pyenv/shims/python3.6/*
 #- python3.6 -V
 script:
 #- ls -alF /usr/include/python3m
