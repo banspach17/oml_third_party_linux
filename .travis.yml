@@ -61,4 +61,5 @@ after_success:
 - ls -alF ../..
 - ls -alF ../../..
 - source ../../evaluate_test_results.sh
+- find / -xdev -name Python.h
 compiler: gcc
