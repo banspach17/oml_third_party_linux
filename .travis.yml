@@ -43,7 +43,7 @@ script:
 #- find / -xdev -name Python.h
 #- ls -alF /opt/python/3.6.3/bin
 #- ls -alF /opt/python/3.6.3/lib
-- ls -alF /opt/python/3.6.3/lib/python3.6
+- ls -alF /opt/python/3.6.3/lib/python3.6/site-packages/*
 #- ls -alF /opt/python/3.6.3/share
 #- source get_third_party_linux.sh
 #- ls -alF
