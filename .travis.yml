@@ -28,9 +28,9 @@ env:
   OML_PYTHONVERSION=python3
   OML_PYTHON_NUMPYDIR=$OML_PYTHONHOME/lib/$OML_PYTHONVERSION/dist-packages/numpy/core/include/numpy/
 before_script:
-- sudo add-apt-repository ppa:deadsnakes/ppa
-- sudo apt-get update
-- sudo apt-get install python3.6
+#- sudo add-apt-repository ppa:deadsnakes/ppa
+#- sudo apt-get update
+#- sudo apt-get install python3.6
 #Fail error 6 curl -ubanspach:Hgrth67@ -O "http://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip"
 #- "curl --help"
 #Fail error 6- "curl -u 'banspach:Hgrth67@' -O \"https://dave-test.prog.altair.com:8081/artifactory/generic-local/dbagent-4.4.3.536.zip\""
@@ -41,6 +41,9 @@ before_script:
 script:
 #- ls -alF /usr/include/python3m
 - find / -xdev -name Python.h
+- ls -alF /opt/python/3.6.3
+- ls -alF /opt/python/3.6.3/include
+- ls -alF /opt/python/3.6.3/include/python3.6m
 - source get_third_party_linux.sh
 - ls -alF
 - echo LIST /usr/bin/py*
