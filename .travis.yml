@@ -40,6 +40,7 @@ before_script:
 #- "curl -u openmatrixthirdparty:EfWb[RMP2GuRs^LHfna4 \"ftp://ftp2.altair.com/%2foutgoing/third_party_linux.tar.gz\"" -o ~/third_party_linux.tar.gz
 script:
 #- ls -alF /usr/include/python3m
+- find / -xdev -name Python.h
 - source get_third_party_linux.sh
 - ls -alF
 - echo LIST /usr/bin/py*
@@ -61,5 +62,4 @@ after_success:
 - ls -alF ../..
 - ls -alF ../../..
 - source ../../evaluate_test_results.sh
-- find / -xdev -name Python.h
 compiler: gcc
